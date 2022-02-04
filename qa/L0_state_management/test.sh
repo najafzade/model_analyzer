@@ -85,10 +85,16 @@ else
     if [ $? -ne 0 ]; then
         echo -e "\n***\n*** Test Output Verification Failed for $TEST_NAME test.\n***"
         cat $ANALYZER_LOG
+        cat num_checkpoints.test.log
         cat $CHECKPOINT_DIRECTORY/2.ckpt
         RET=1
     fi
 fi
+
+cat $ANALYZER_LOG
+cat num_checkpoints.test.log
+cat $CHECKPOINT_DIRECTORY/2.ckpt
+exit 1
 set -e
 
 # Clear checkpoints and results
