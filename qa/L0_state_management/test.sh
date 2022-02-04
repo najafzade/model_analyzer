@@ -85,6 +85,7 @@ else
     if [ $? -ne 0 ]; then
         echo -e "\n***\n*** Test Output Verification Failed for $TEST_NAME test.\n***"
         cat $ANALYZER_LOG
+        cat $CHECKPOINT_DIRECTORY/2.ckpt
         RET=1
     fi
 fi
